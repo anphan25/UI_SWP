@@ -37,11 +37,6 @@ function checkWordCount() {
 
 const checkLoginKind = () => {
   if (header.getAttribute("login-kind") === "no-login") {
-    cmtIcon.addEventListener("click", () => {
-      userComment.scrollIntoView({ behavior: "smooth", block: "center" });
-      textareaComment.focus();
-    });
-
     likeIcon.addEventListener("click", () => {
       toggleModalHidden();
     });
@@ -64,11 +59,6 @@ const checkLoginKind = () => {
     });
   }
   if (header.getAttribute("login-kind") === "logined") {
-    cmtIcon.addEventListener("click", () => {
-      userComment.scrollIntoView({ behavior: "smooth", block: "center" });
-      textareaComment.focus();
-    });
-
     textareaComment.addEventListener("keyup", () => {
       checkWordCount();
     });
@@ -96,6 +86,10 @@ const checkLoginKind = () => {
       likeIcon.nextElementSibling.classList.toggle("clicked-like-text");
     });
   }
+  cmtIcon.addEventListener("click", () => {
+    userComment.scrollIntoView({ behavior: "smooth", block: "center" });
+    textareaComment.focus();
+  });
 };
 
 const disableSubmitBtn = () => {
