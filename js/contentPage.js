@@ -18,6 +18,11 @@ submitBtn.addEventListener("mouseleave", () => {
   submitBtn.style.backgroundColor = "#3B49DF";
 });
 
+cmtIcon.addEventListener("click", () => {
+  userComment.scrollIntoView({ behavior: "smooth", block: "center" });
+  textareaComment.focus();
+});
+
 //Functions
 //Functions
 //Functions
@@ -86,10 +91,6 @@ const checkLoginKind = () => {
       likeIcon.nextElementSibling.classList.toggle("clicked-like-text");
     });
   }
-  cmtIcon.addEventListener("click", () => {
-    userComment.scrollIntoView({ behavior: "smooth", block: "center" });
-    textareaComment.focus();
-  });
 };
 
 const disableSubmitBtn = () => {
